@@ -688,7 +688,9 @@
     .footer-links a { color: var(--teal-100); font-size: .8rem; font-weight: 700; text-decoration: none; }
     .footer-links a:hover { text-decoration: underline; }
  
-    .footer-copy { font-size: .74rem; line-height: 1.6; max-width: 560px; margin: 0 auto; }
+    .footer-copy { font-size: .74rem; line-height: 1.6; max-width: 720px; margin: 0 auto; text-align: left; }
+    .footer-copy p { margin: 0 0 12px; }
+    .footer-copy a { color: var(--teal-100); }
  
     /* ─── STICKY CALL BAR ─── */
     .sticky-call-bar {
@@ -1128,10 +1130,10 @@
         <div class="art-callout">
           <div class="callout-icon">&#9888;&#65039;</div>
           <p>
-            <strong>We do not offer every plan available in your area.</strong> Currently we represent
-            [NUMBER OF ORGANIZATIONS] organizations which offer [NUMBER OF PRODUCTS] products in your area.
-            Please contact Medicare.gov, 1-800-MEDICARE (TTY 1-877-486-2048), or your local State Health
-            Insurance Assistance Program (SHIP) to get information on all of your options.
+            <strong>We do not offer every plan available in your area.</strong> Currently, we represent
+            5 organizations that offer 81,602 products in your area. Please contact Medicare.gov,
+            1-800-MEDICARE, or your local State Health Insurance Program (SHIP) for information on all
+            your options.
           </p>
         </div>
 
@@ -1375,10 +1377,15 @@
               <!-- Tagged consent (use_tagged_consent=true) -->
               <label class="softlead-consent">
                 <input type="checkbox" id="sl-consent" name="consent" required data-tf-element-role="consent-opt-in">
-                <span data-tf-element-role="consent-language">By submitting, I agree that Senior Healthcare Advisors and its licensed
-                  insurance agents may contact me by phone, text, or email, including by automated systems
-                  or prerecorded messages, about Medicare Advantage and other Medicare plan options.
-                  Consent is not a condition of purchase. Message and data rates may apply.</span>
+                <span data-tf-element-role="consent-language">By checking this box and clicking &lsquo;Get My Free Callback,&rsquo; you give
+                  permission for a licensed insurance agent or a licensed sales agent from Senior Healthcare
+                  Advisors, LLC to contact you by phone, email, or text message about Medicare Advantage,
+                  Medicare Prescription Drug (Part D), and Medicare Supplement Insurance plans. By submitting
+                  your contact information, you confirm you are the subscriber or customary user of the phone
+                  number and email address provided. You may unsubscribe at any time. You understand this is
+                  an insurance solicitation and that calls may be made using an automated telephone dialing
+                  system (ATDS) or a prerecorded message. Consent is not required as a condition of purchase.
+                  Message and data rates may apply.</span>
               </label>
 
               <button type="submit" class="softlead-submit" data-tf-element-role="submit">Get My Free Callback &rarr;</button>
@@ -1422,11 +1429,8 @@
           <a href="#" id="ctaBottom" class="cta-btn phone-link" data-phone-prefix="&#128222; TAP TO CALL: " hidden onclick="trackEvent('offer_click')">&nbsp;</a>
 
           <div class="fine">
-            We do not offer every plan available in your area. Currently we represent [NUMBER OF
-            ORGANIZATIONS] organizations which offer [NUMBER OF PRODUCTS] products in your area. Please
-            contact Medicare.gov, 1-800-MEDICARE (TTY 1-877-486-2048), or your local State Health
-            Insurance Assistance Program (SHIP) to get information on all of your options. Not connected
-            with or endorsed by the U.S. government or the federal Medicare program.
+            We do not offer every plan available in your area. Currently, we represent 5 organizations that offer 81,602 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) for information on all your options. We are not affiliated with or endorsed by Medicare or any federal or state
+            government agency.
           </div>
 
         </div>
@@ -1437,19 +1441,32 @@
   <!-- FOOTER -->
   <div class="site-footer">
     <div class="footer-links">
+      <a href="https://www.seniorhealthcareadv.com/terms-of-use" target="_blank" rel="noopener">Terms of Use</a>
       <a href="https://www.seniorhealthcareadv.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
       <a href="https://www.seniorhealthcareadv.com/contact/" target="_blank" rel="noopener">Contact</a>
     </div>
     <div class="footer-copy">
-      &copy; 2026 Senior Healthcare Advisors, LLC &middot; 828 S. Military Trail, Deerfield Beach, Florida 33442
-      &middot; A licensed insurance agency and non-government entity. This is an advertisement.
-      <br><br>
-      Medicare Advantage plans are offered by private companies that contract with Medicare. We do not
-      offer every plan available in your area. Currently we represent [NUMBER OF ORGANIZATIONS]
-      organizations which offer [NUMBER OF PRODUCTS] products in your area. Please contact Medicare.gov,
-      1-800-MEDICARE (TTY 1-877-486-2048), or your local State Health Insurance Assistance Program (SHIP)
-      to get information on all of your options. Plan availability varies by carrier and location.
-      [STATE LICENSE NUMBERS / NPN AS REQUIRED]
+      <p><strong>Senior Healthcare Advisors, LLC.</strong> | 828 S. Military Trail, Deerfield Beach, Florida, 33442 |
+        (866) 391-3831 | <a href="https://www.seniorhealthcareadv.com" target="_blank" rel="noopener">www.seniorhealthcareadv.com</a>
+        &middot; This is an advertisement.</p>
+
+      <p>Disclaimer: By providing your information and clicking &lsquo;Get My Free Callback,&rsquo; you give permission for a
+        licensed insurance agent or a licensed sales agent from Senior Healthcare Advisors, LLC to contact you
+        by phone, email, or text message about Medicare Advantage, Medicare Prescription Drug (Part D), and
+        Medicare Supplement Insurance plans. By submitting your contact information, you confirm you are the
+        subscriber or customary user of the phone number and email address provided. You may unsubscribe at any
+        time. You understand this is an insurance solicitation and that calls may be made using an automated
+        telephone dialing system (ATDS) or a prerecorded message. Consent is not required as a condition of
+        purchase. Message and data rates may apply. We do not offer every plan available in your area. Currently, we represent 5 organizations that offer 81,602 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) for information on all your options.</p>
+
+      <p>Senior Healthcare Advisors, LLC is a non-government, independent health insurance agency. We are not
+        affiliated with or endorsed by Medicare or any federal or state government agency. Senior Healthcare
+        Advisors, LLC represents plans that are insured or covered by a Medicare Advantage HMO, PPO, and PFFS
+        organization with a Medicare contract and/or a Medicare-approved Part D sponsor. Enrollment depends on
+        the plan&rsquo;s contract renewal with Medicare. Not all plans offer all of these benefits. Benefits may vary
+        by carrier and location. Limitations and exclusions may apply. Enrollment in a plan may be limited to
+        certain times of the year unless you qualify for a Special Enrollment Period or you are in your Medicare
+        Initial Enrollment Period.</p>
     </div>
   </div>
 

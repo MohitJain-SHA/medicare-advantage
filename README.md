@@ -4,15 +4,12 @@ Eligibility-style quiz (3 questions), then a result screen with a "Tap to Call" 
 
 ## Before launch — fill these in
 
-Everything below is a marked placeholder in `index.html`. Nothing on the page pretends to work until these are set.
+Marked placeholders in `index.html`. Nothing on the page pretends to work until these are set.
 
 | What | Where | Behavior until set |
 | --- | --- | --- |
 | CallGrid tracking number | `CALLGRID_CAMPAIGN_SOURCE_ID` in the script | Visitors see the static number `(954) 697-9692` (`CALLGRID_FALLBACK`) instead of a per-visitor tracking number, so calls aren't attributed by CallGrid |
 | LeadConduit flow | `LEADCONDUIT_URL` in the script (`…/flows/<id>/sources/<id>/submit`) | Submitting the callback form shows an error instead of a success message |
-| TPMO disclaimer counts | `[NUMBER OF ORGANIZATIONS]` / `[NUMBER OF PRODUCTS]` (three places: article callout, result screen, footer) | Placeholder text is visible on the page |
-| License numbers / NPN | `[STATE LICENSE NUMBERS / NPN AS REQUIRED]` in the footer | Placeholder text is visible on the page |
-| Terms of Service / Do Not Sell My Info | Not linked: no such pages exist on seniorhealthcareadv.com yet | Add footer links once the pages exist (state privacy laws may require a Do Not Sell/Share page) |
 | Preview image | `og:image` / `og:url` in `<head>` | No link-preview image |
 
 Also confirm with LeadConduit: `source_sha` is still `senior_healthcare_advisors_web` (copied from the home healthcare funnel) — change it if this flow routes on a different value.
@@ -24,11 +21,13 @@ This is a good-faith review, not legal advice or a compliance sign-off. Medicare
 What the page does:
 
 - Labels the page **Advertisement** at the top, since the article format could read as editorial.
-- Shows the TPMO disclaimer in three places (article, result screen, footer) plus a "not connected with or endorsed by the U.S. government or the federal Medicare program" statement. **The organization and product counts are still placeholders.**
-- Names Senior Healthcare Advisors in the consent language, leaves the checkbox unchecked, and states that consent isn't a condition of purchase. Answering the quiz is explicitly *not* treated as consent.
-- Links the Privacy Policy on seniorhealthcareadv.com next to the form and in the footer.
+- Uses the disclaimer and consent wording from the previous seniorhealthcareadv.com site, with the button name changed to "Get My Free Callback" and a required checkbox added. The TPMO sentence appears in the article, on the result screen, and in the footer, with the counts from that site (5 organizations, 81,602 products). **Update the counts whenever they change.**
+- The consent checkbox is unchecked by default. Answering the quiz is explicitly *not* treated as consent.
+- Links the Terms of Use, Privacy Policy, and Contact pages on seniorhealthcareadv.com in the footer, and the Privacy Policy next to the form.
 - Leaves out the home healthcare funnel's simulated visitor counter, rotating fake "approved" popups, countdown timer, and "never sold" claim.
 - Enrollment dates (Oct 15 – Dec 7, Jan 1 – Mar 31, initial enrollment window) are stated factually.
+
+The footer intentionally omits the carrier material ID (`MULTIPLAN_…`) from the previous site: that ID belongs to a specific approved piece of material, so this page needs its own approval and ID before it is used.
 
 Not handled by this page: the CMS call requirements (recording, the verbal TPMO disclaimer at the start of a call, and a documented Scope of Appointment 48 hours before a personal marketing appointment) belong in the call scripts.
 
