@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senior Healthcare Advisors: Compare Medicare Advantage Plans</title>
+
+  <link rel="icon" type="image/png" href="sha-favicon.png">
+
+  <!-- Ad-funnel page — never meant to rank / be indexed -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="See which Medicare Advantage plans are available where you live. Free, no-obligation comparison with a licensed agent. Takes about 2 minutes.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Senior Healthcare Advisors: Compare Medicare Advantage Plans">
+  <meta property="og:description" content="Plans, doctors, drugs and extra benefits vary by ZIP code. Compare the Medicare Advantage plans available where you live. Free to check, no obligation.">
+  <!-- og:image and og:url intentionally omitted — set these to the deployed URL
+       and a real preview image (1200x630) before running ads. -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Senior Healthcare Advisors: Compare Medicare Advantage Plans">
+  <meta name="twitter:description" content="Plans, doctors, drugs and extra benefits vary by ZIP code. Compare the Medicare Advantage plans available where you live.">
+
+  <!-- META PIXEL — same pixel as the home healthcare funnel. PageView only;
+       Lead events should come from call tracking / LeadConduit, not this page.
+       Swap the ID below if Medicare Advantage gets its own pixel. -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1036352314637195');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1036352314637195&ev=PageView&noscript=1" /></noscript>
+
+  <!-- TrustedForm (ActiveProspect), tagged consent enabled. The script injects a
+       hidden xxTrustedFormCertUrl input into #softleadForm; the submit handler
+       reads it and sends it to LeadConduit as trustedform_cert_url. -->
+  <script type="text/javascript">
+    (function() {
+      var tf = document.createElement('script');
+      tf.type = 'text/javascript';
+      tf.async = true;
+      tf.src = ("https:" == document.location.protocol ? 'https' : 'http') +
+        '://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&use_tagged_consent=true&l=' +
+        new Date().getTime() + Math.random();
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+    })();
+  </script>
+  <noscript>
+    <img src='https://api.trustedform.com/ns.gif' />
+  </noscript>
+
+  <style>
+
+    /* ══════════════════════════════════════════════════════════════
+       DESIGN TOKENS
+    ══════════════════════════════════════════════════════════════ */
+    :root {
+      --teal-950: #0b2f2c;
+      --teal-900: #124e48;
+      --teal-800: #10635b;
+      --teal-700: #0f766e;
+      --teal-600: #0d9488;
+      --teal-500: #14b8a6;
+      --teal-100: #ccfbf1;
+      --teal-50: #f0fdfa;
+ 
+      --amber-600: #d97706;
+      --amber-500: #f59e0b;
+      --amber-400: #fbbf24;
+      --amber-300: #fcd34d;
+      --amber-100: #fef3c7;
+      --amber-50: #fffbeb;
+ 
+      --ink: #0d1c1a;
+      --ink-2: #334744;
+      --ink-3: #5c716e;
+      --rule: #e3ebe9;
+      --rule-2: #eef3f2;
+      --paper: #ffffff;
+      --paper-2: #f7faf9;
+ 
+      --shadow-sm: 0 1px 3px rgba(11, 47, 44, .07);
+      --shadow-md: 0 4px 16px rgba(11, 47, 44, .09);
+      --shadow-lg: 0 12px 34px rgba(11, 47, 44, .13);
+ 
+      --wrap: 720px;
+      --serif: Georgia, 'Times New Roman', serif;
+    }
+ 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+    html { -webkit-text-size-adjust: 100%; }
+ 
+    body {
+      font-family: 'Lato', system-ui, sans-serif;
+      background: var(--paper);
+      min-height: 100vh;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+ 
+    *:focus-visible {
+      outline: 3px solid var(--teal-600);
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+ 
+    img { max-width: 100%; display: block; }
+ 
+    /* ─── TOP PHONE BAR ─── */
+    .topbar {
+      background: var(--teal-900);
+      color: #fff;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: .875rem;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+ 
+    .topbar a {
+      color: var(--amber-300);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: .95rem;
+      white-space: nowrap;
+    }
+ 
+    .topbar a:hover { text-decoration: underline; }
+ 
+    /* ─── HEADER ─── */
+    .header-wrap {
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      z-index: 5;
+    }
+ 
+    .site-header {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+ 
+    .brand-logo { height: 52px; width: auto; flex-shrink: 0; }
+ 
+    /* ─── PROGRESS ─── */
+    .progress-section {
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--rule);
+      padding: 34px 20px 16px;
+    }
+ 
+    .progress-inner { max-width: var(--wrap); margin: 0 auto; }
+ 
+    .progress-track {
+      height: 9px;
+      background: var(--rule);
+      border-radius: 99px;
+      overflow: visible;
+      position: relative;
+    }
+ 
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal-600), var(--teal-500));
+      border-radius: 99px;
+      position: relative;
+      transition: width .45s cubic-bezier(.4, 0, .2, 1);
+    }
+ 
+    .progress-bubble {
+      position: absolute;
+      right: 0;
+      top: -27px;
+      transform: translateX(50%);
+      background: var(--teal-800);
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+ 
+    .progress-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid var(--teal-800);
+    }
+ 
+    /* ─── ARTICLE SHELL ─── */
+    .article-wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+ 
+    .art-kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 26px 0 14px;
+      flex-wrap: wrap;
+    }
+ 
+    .art-tag {
+      background: var(--teal-800);
+      color: #fff;
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+ 
+    .art-dateline {
+      font-size: .74rem;
+      font-weight: 700;
+      color: var(--ink-3);
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+ 
+    .art-headline {
+      font-family: var(--serif);
+      font-size: 2.05rem;
+      font-weight: 700;
+      line-height: 1.19;
+      letter-spacing: -.5px;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+ 
+    .art-headline .hl {
+      background: linear-gradient(transparent 62%, var(--amber-300) 62%);
+      padding: 0 2px;
+    }
+ 
+    .art-standfirst {
+      font-size: 1.08rem;
+      color: var(--ink-2);
+      line-height: 1.58;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+ 
+    .art-byline {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 13px 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 22px;
+    }
+ 
+    .byline-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--teal-700);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: .82rem;
+      flex-shrink: 0;
+      letter-spacing: .5px;
+    }
+ 
+    .byline-name { font-size: .87rem; font-weight: 800; color: var(--ink); line-height: 1.35; }
+    .byline-meta { font-size: .76rem; color: var(--ink-3); line-height: 1.35; }
+ 
+    /* ─── FIGURE ─── */
+    .art-figure { margin-bottom: 22px; }
+ 
+    .art-figure img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: var(--shadow-md);
+    }
+ 
+    .art-caption {
+      font-size: .76rem;
+      color: var(--ink-3);
+      line-height: 1.5;
+      padding-top: 8px;
+      border-left: 3px solid var(--amber-400);
+      padding-left: 10px;
+      margin-top: 10px;
+    }
+ 
+    /* ─── ARTICLE BODY ─── */
+    .art-body { margin-bottom: 26px; }
+ 
+    .art-body p {
+      font-size: 1.06rem;
+      line-height: 1.68;
+      color: var(--ink-2);
+      margin-bottom: 17px;
+    }
+ 
+    .art-body p strong { color: var(--ink); font-weight: 800; }
+ 
+    .art-h2 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.28;
+      color: var(--ink);
+      margin: 30px 0 13px;
+    }
+ 
+    /* Lead-in block directly under the photo: no big top gap */
+    .art-body-lead { margin-bottom: 18px; }
+    .art-body-lead .art-h2 { margin-top: 6px; }
+ 
+    /* Quiz card placed inline in the article, right under the lead-in */
+    .quiz-inline { margin: 0 0 34px; }
+ 
+    .art-pullquote {
+      border-left: 4px solid var(--teal-600);
+      background: var(--teal-50);
+      padding: 17px 20px;
+      border-radius: 0 10px 10px 0;
+      margin: 24px 0;
+    }
+ 
+    .art-pullquote p {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--teal-900);
+      margin-bottom: 8px;
+    }
+ 
+    .art-pullquote cite {
+      font-family: 'Lato', sans-serif;
+      font-size: .78rem;
+      font-style: normal;
+      font-weight: 800;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+ 
+    .art-callout {
+      background: var(--amber-50);
+      border: 1.5px solid var(--amber-300);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 24px 0;
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+    }
+ 
+    .callout-icon { font-size: 1.35rem; line-height: 1.2; flex-shrink: 0; }
+ 
+    .art-callout p { font-size: .95rem; line-height: 1.58; color: #6b4a06; margin: 0; }
+    .art-callout strong { color: #4a3204; font-weight: 800; }
+ 
+    .fact-list { list-style: none; margin: 18px 0; }
+ 
+    .fact-list li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 11px;
+      font-size: 1.01rem;
+      line-height: 1.58;
+      color: var(--ink-2);
+    }
+ 
+    .fact-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--teal-100);
+      border: 2px solid var(--teal-600);
+    }
+ 
+    .fact-list li::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 12px;
+      width: 8px;
+      height: 4px;
+      border-left: 2px solid var(--teal-700);
+      border-bottom: 2px solid var(--teal-700);
+      transform: rotate(-45deg);
+    }
+ 
+    /* ─── QUIZ CARD ─── */
+    .main-container {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 20px 30px;
+    }
+ 
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+ 
+    .card-body { padding: 24px 22px 26px; }
+ 
+    .screen { display: none; }
+    .screen.active { display: block; animation: fadein .3s ease; }
+ 
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(7px); }
+      to { opacity: 1; transform: none; }
+    }
+ 
+    .quiz-banner {
+      background: var(--teal-800);
+      color: #fff;
+      text-align: center;
+      padding: 15px 20px;
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      font-weight: 700;
+      line-height: 1.32;
+    }
+ 
+    .quiz-banner span { color: var(--amber-300); }
+ 
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 16px;
+      justify-content: center;
+      padding: 14px 0 4px;
+    }
+ 
+    .ti {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--ink-2);
+    }
+ 
+    .ti-check {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: var(--teal-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+ 
+    .ti-check svg { width: 9px; height: 7px; fill: none; stroke: #fff; stroke-width: 2.2; }
+ 
+    .question-box {
+      background: var(--paper-2);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px 18px;
+      margin-top: 18px;
+    }
+ 
+    .q-step-label {
+      font-size: .72rem;
+      font-weight: 900;
+      color: var(--teal-700);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+ 
+    .q-title {
+      font-size: 1.24rem;
+      font-weight: 800;
+      line-height: 1.32;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+ 
+    .q-sub {
+      font-size: .92rem;
+      color: var(--ink-3);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+ 
+    .answer-grid { display: flex; flex-direction: column; gap: 11px; }
+ 
+    .answer-btn {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      width: 100%;
+      background: var(--paper);
+      border: 2px solid var(--rule);
+      border-radius: 11px;
+      padding: 15px 16px;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      transition: border-color .15s, box-shadow .15s, transform .1s;
+    }
+ 
+    .answer-btn:hover {
+      border-color: var(--teal-500);
+      box-shadow: 0 3px 12px rgba(13, 148, 136, .14);
+    }
+ 
+    .answer-btn:active { transform: scale(.99); }
+ 
+    .ans-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+    .ans-label { font-size: 1.02rem; font-weight: 800; color: var(--ink); line-height: 1.3; }
+    .ans-hint { font-size: .82rem; color: var(--ink-3); line-height: 1.4; margin-top: 2px; }
+ 
+    .ans-arrow {
+      margin-left: auto;
+      font-size: 1.7rem;
+      color: var(--teal-600);
+      font-weight: 400;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+ 
+    /* ─── LOADING ─── */
+    .loading-wrap { text-align: center; padding: 54px 20px; }
+ 
+    .loading-spinner {
+      width: 46px;
+      height: 46px;
+      border: 4px solid var(--rule);
+      border-top-color: var(--teal-600);
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      animation: spin .85s linear infinite;
+    }
+ 
+    @keyframes spin { to { transform: rotate(360deg); } }
+ 
+    .loading-text { font-size: 1.02rem; font-weight: 700; color: var(--ink-2); }
+ 
+    /* ─── RESULT ─── */
+    .approved-hero {
+      text-align: center;
+      padding: 8px 0 20px;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 20px;
+    }
+ 
+    .approved-check {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--teal-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      box-shadow: 0 0 0 7px var(--teal-50);
+    }
+ 
+    .approved-check svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 2.6; }
+ 
+    .approved-title {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1.28;
+      color: var(--ink);
+      margin-bottom: 9px;
+    }
+ 
+    .approved-sub {
+      font-size: .96rem;
+      color: var(--ink-3);
+      line-height: 1.58;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+ 
+    /* ─── CTA ─── */
+    .cta-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(180deg, var(--teal-600), var(--teal-700));
+      color: #fff;
+      text-align: center;
+      padding: 18px 16px;
+      border-radius: 11px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: .3px;
+      text-decoration: none;
+      box-shadow: 0 5px 16px rgba(13, 148, 136, .34);
+      transition: transform .1s, box-shadow .15s;
+      animation: ctapulse 2.4s infinite;
+    }
+ 
+    .cta-btn:hover { box-shadow: 0 7px 22px rgba(13, 148, 136, .44); transform: translateY(-1px); }
+    .cta-btn:active { transform: translateY(0); }
+    .cta-btn[hidden] { display: none; }
+ 
+    @keyframes ctapulse {
+      0%, 100% { box-shadow: 0 5px 16px rgba(13, 148, 136, .34); }
+      50% { box-shadow: 0 5px 16px rgba(13, 148, 136, .34), 0 0 0 7px rgba(20, 184, 166, .11); }
+    }
+ 
+    .cta-sub-note {
+      text-align: center;
+      font-size: .8rem;
+      color: var(--ink-3);
+      font-weight: 700;
+      margin: 9px 0 4px;
+    }
+ 
+    .tap-fallback-note {
+      font-size: .74rem;
+      color: var(--ink-3);
+      line-height: 1.5;
+      text-align: center;
+      margin-bottom: 18px;
+      padding: 0 6px;
+    }
+ 
+    /* ─── NEXT STEPS ─── */
+    .next-title {
+      font-family: var(--serif);
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+ 
+    .step-row { display: flex; gap: 13px; margin-bottom: 14px; align-items: flex-start; }
+ 
+    .step-circle {
+      width: 29px;
+      height: 29px;
+      border-radius: 50%;
+      background: var(--teal-700);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: .87rem;
+      flex-shrink: 0;
+    }
+ 
+    .step-strong { display: block; font-size: .97rem; font-weight: 800; color: var(--ink); line-height: 1.35; }
+    .step-desc { display: block; font-size: .86rem; color: var(--ink-3); line-height: 1.5; margin-top: 2px; }
+ 
+    /* ─── FINE PRINT ─── */
+    .fine { font-size: .72rem; color: var(--ink-3); line-height: 1.55; margin-top: 16px; }
+ 
+    /* ─── FOOTER ─── */
+    .site-footer {
+      background: var(--teal-950);
+      color: #9fb8b5;
+      padding: 26px 20px 84px;
+      text-align: center;
+    }
+ 
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      justify-content: center;
+      margin-bottom: 13px;
+    }
+ 
+    .footer-links a { color: var(--teal-100); font-size: .8rem; font-weight: 700; text-decoration: none; }
+    .footer-links a:hover { text-decoration: underline; }
+ 
+    .footer-copy { font-size: .74rem; line-height: 1.6; max-width: 560px; margin: 0 auto; }
+ 
+    /* ─── STICKY CALL BAR ─── */
+    .sticky-call-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 70;
+      background: linear-gradient(180deg, var(--teal-600), var(--teal-800));
+      color: #fff;
+      text-align: center;
+      padding: 15px 16px;
+      font-size: 1.04rem;
+      font-weight: 900;
+      letter-spacing: .3px;
+      text-decoration: none;
+      box-shadow: 0 -3px 16px rgba(11, 47, 44, .22);
+    }
+ 
+    .sticky-call-bar[hidden] { display: none; }
+ 
+    @media (min-width: 768px) {
+      .sticky-call-bar { display: none !important; }
+      .site-footer { padding-bottom: 26px; }
+    }
+ 
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      .art-headline { font-size: 1.62rem; }
+      .art-standfirst { font-size: 1rem; }
+      .art-body p { font-size: 1.01rem; }
+      .art-h2 { font-size: 1.26rem; }
+      .approved-title { font-size: 1.32rem; }
+      .quiz-banner { font-size: 1.05rem; }
+      .card-body { padding: 20px 16px 22px; }
+      .main-container, .article-wrap { padding-left: 16px; padding-right: 16px; }
+      .brand-logo { height: 42px; }
+      .cta-btn { font-size: 1.04rem; padding: 16px 12px; }
+    }
+ 
+    @media (max-width: 380px) {
+      .art-headline { font-size: 1.44rem; }
+    }
+ 
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+    }
+ 
+    /* ─── SOFT-LEAD FORM ─── */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+ 
+    .softlead-box {
+      background: var(--amber-50);
+      border: 1.5px dashed var(--amber-400);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+ 
+    .softlead-kicker {
+      font-size: .74rem;
+      font-weight: 900;
+      color: var(--amber-600);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 4px;
+    }
+ 
+    .softlead-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--teal-900);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+ 
+    .softlead-sub { font-size: .88rem; color: var(--ink-2); line-height: 1.55; margin-bottom: 16px; }
+ 
+    .softlead-row { display: flex; gap: 10px; margin-bottom: 12px; }
+    .softlead-field { flex: 1; min-width: 0; }
+    .softlead-field-full { margin-bottom: 12px; }
+ 
+    .softlead-field label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--ink-2);
+      margin-bottom: 5px;
+    }
+ 
+    .softlead-field input {
+      width: 100%;
+      height: 48px;
+      border: 2px solid var(--rule);
+      border-radius: 8px;
+      padding: 0 14px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      color: var(--ink);
+      background: var(--paper);
+      outline: none;
+      transition: border-color .15s;
+    }
+ 
+    .softlead-field input:focus { border-color: var(--teal-600); }
+ 
+    .softlead-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin: 14px 0 16px;
+      cursor: pointer;
+    }
+ 
+    .softlead-consent input {
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+      flex-shrink: 0;
+      accent-color: var(--teal-700);
+    }
+ 
+    .softlead-consent span { font-size: .76rem; color: var(--ink-3); line-height: 1.5; }
+ 
+    .softlead-submit {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: var(--teal-700);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: .95rem;
+      font-weight: 900;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .15s, transform .1s;
+    }
+ 
+    .softlead-submit:hover { background: var(--teal-800); }
+    .softlead-submit:active { transform: scale(.99); }
+    .softlead-submit:disabled { opacity: .6; cursor: default; }
+ 
+    .softlead-note {
+      text-align: center;
+      font-size: .74rem;
+      color: var(--ink-3);
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+ 
+    .softlead-thanks { text-align: center; padding: 14px 4px; }
+ 
+    .softlead-thanks-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--teal-600);
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+ 
+    .softlead-thanks-title { font-size: 1.1rem; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+    .softlead-thanks-sub { font-size: .87rem; color: var(--ink-3); line-height: 1.55; }
+ 
+    @media (max-width: 640px) {
+      .softlead-row { flex-direction: column; gap: 12px; }
+      .softlead-box { padding: 16px; }
+    }
+  
+    /* ─── ENROLLMENT PERIODS ─── */
+    .date-table {
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 20px 0 22px;
+    }
+
+    .date-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 16px;
+      padding: 15px 18px;
+      align-items: start;
+    }
+
+    .date-row + .date-row { border-top: 1px solid var(--rule); }
+    .date-row:nth-child(odd) { background: var(--paper-2); }
+
+    .date-when {
+      font-weight: 900;
+      font-size: .95rem;
+      color: var(--teal-800);
+      line-height: 1.35;
+    }
+
+    .date-what { font-size: .95rem; color: var(--ink-2); line-height: 1.55; }
+    .date-what strong { color: var(--ink); font-weight: 800; }
+
+    @media (max-width: 640px) {
+      .date-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    /* ─── FORM ERROR ─── */
+    .softlead-error {
+      margin-top: 12px;
+      padding: 11px 13px;
+      border-radius: 8px;
+      background: #fdecea;
+      border: 1px solid #f3b9b3;
+      color: #7a1f16;
+      font-size: .84rem;
+      line-height: 1.5;
+    }
+    .softlead-error[hidden] { display: none; }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP PHONE BAR — number injected by CallGrid (see initCallGrid) -->
+  <div class="topbar">
+    Speak with a licensed agent. No cost, no obligation. &nbsp;<a href="#" class="phone-link" data-phone-prefix="&#9742; " hidden onclick="trackEvent('topbar_click')">&nbsp;</a>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header-wrap">
+    <div class="site-header">
+      <div class="logo-wrap">
+        <img class="brand-logo" src="sha-logo.png" alt="Senior Healthcare Advisors, A Non-Government Entity">
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-section">
+    <div class="progress-inner">
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill" style="width:25%">
+          <div class="progress-bubble" id="progressBubble">25%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 1 — ARTICLE + QUIZ STEP 1
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen active" id="screen-intro">
+
+    <article class="article-wrap">
+
+      <div class="art-kicker">
+        <span class="art-tag">Medicare Advantage</span>
+        <span class="art-dateline" id="artDateline">Updated this month</span>
+      </div>
+
+      <h1 class="art-headline">
+        Medicare Plans Change Every Year. <span class="hl">See What's Available Where You Live</span>
+      </h1>
+
+      <p class="art-standfirst">
+        Which doctors are covered, what your prescriptions cost, and which extras come with a plan can
+        all differ from one ZIP code to the next. A licensed agent can compare the Medicare Advantage
+        plans we offer in your area &mdash; at no cost to you.
+      </p>
+
+      <div class="art-byline">
+        <div class="byline-avatar">SHA</div>
+        <div>
+          <div class="byline-name">Senior Healthcare Advisors &middot; Medicare Desk</div>
+          <div class="byline-meta">Licensed insurance agency &middot; A non-government entity</div>
+        </div>
+      </div>
+
+      <figure class="art-figure">
+        <img src="hero-photo.jpg" alt="A smiling senior woman talking on the phone in her kitchen">
+        <figcaption class="art-caption">
+          Plan networks, drug lists, and costs are set plan by plan &mdash; and they can change on
+          January 1 every year.
+        </figcaption>
+      </figure>
+
+      <!-- Lead-in + quiz, directly under the photo -->
+      <div class="art-body art-body-lead">
+        <h2 class="art-h2">Finding out where you stand</h2>
+
+        <p>
+          The right Medicare Advantage plan depends on your ZIP code, your doctors, and the medications
+          you take &mdash; which is why the useful answer comes from a licensed agent who can look at your
+          specifics. The three questions below take about a minute and tell that agent what to focus on
+          before you speak.
+        </p>
+
+        <p>
+          <strong>There is no cost to check and no obligation to enroll.</strong>
+        </p>
+      </div>
+
+      <div class="card quiz-inline">
+        <div class="quiz-banner">
+          Compare plans in your area &mdash; <span>3 quick questions</span>
+        </div>
+        <div class="card-body">
+
+          <div class="trust-row" style="margin-bottom:6px;">
+            <div class="ti">
+              <div class="ti-check"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1" stroke-linecap="round" stroke-linejoin="round"></polyline></svg></div>
+              Takes about 2 minutes
+            </div>
+            <div class="ti">
+              <div class="ti-check"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1" stroke-linecap="round" stroke-linejoin="round"></polyline></svg></div>
+              No obligation
+            </div>
+            <div class="ti">
+              <div class="ti-check"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1" stroke-linecap="round" stroke-linejoin="round"></polyline></svg></div>
+              100% free to check
+            </div>
+          </div>
+
+          <div class="question-box">
+            <div class="q-step-label">Step 1 of 3 &middot; Quick check</div>
+            <div class="q-title">Where are you with Medicare right now?</div>
+            <div class="q-sub">This helps the agent start in the right place. Choose the one that fits best.</div>
+
+            <div class="answer-grid">
+              <button class="answer-btn" onclick="answerQ1('has_a_and_b')">
+                <div class="ans-icon">&#129706;</div>
+                <div>
+                  <div class="ans-label">I have Medicare Parts A &amp; B</div>
+                  <div class="ans-hint">Compare Medicare Advantage options</div>
+                </div>
+                <span class="ans-arrow">&rsaquo;</span>
+              </button>
+              <button class="answer-btn" onclick="answerQ1('turning_65')">
+                <div class="ans-icon">&#127874;</div>
+                <div>
+                  <div class="ans-label">I'm turning 65 soon</div>
+                  <div class="ans-hint">Learn how your first enrollment window works</div>
+                </div>
+                <span class="ans-arrow">&rsaquo;</span>
+              </button>
+              <button class="answer-btn" onclick="answerQ1('family')">
+                <div class="ans-icon">&#128106;</div>
+                <div>
+                  <div class="ans-label">I'm helping a parent or loved one</div>
+                  <div class="ans-hint">I'm looking into this for someone else</div>
+                </div>
+                <span class="ans-arrow">&rsaquo;</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="fine">By continuing you agree to speak with a licensed insurance agent. This is an
+            advertisement for Medicare Advantage and other Medicare plans offered by private insurance
+            companies. Not connected with or endorsed by the U.S. government or the federal Medicare program.</div>
+
+        </div>
+      </div>
+
+      <!-- Rest of the article, below the quiz -->
+      <div class="art-body">
+
+        <p>
+          If you're on Medicare, you've probably noticed that the choices don't stay put. Plan costs,
+          doctor networks, and drug coverage are reset every year, and a plan that fit well last year
+          may not be the best fit for next year.
+        </p>
+
+        <h2 class="art-h2">What Medicare Advantage is</h2>
+
+        <p>
+          Medicare Advantage (also called Part C) is a way to get your Medicare benefits through a private
+          insurance company that contracts with Medicare. These plans include Part A (hospital) and Part B
+          (medical) coverage. <strong>Many also include Part D prescription drug coverage</strong>, and some
+          add benefits Original Medicare doesn't, like dental, vision, or hearing. What's included depends
+          on the plan.
+        </p>
+
+        <h2 class="art-h2">What's worth comparing</h2>
+
+        <ul class="fact-list">
+          <li><strong>Your doctors and hospitals.</strong> Most plans use a network, so it matters whether the providers you see are in it.</li>
+          <li><strong>Your prescriptions.</strong> Each plan has its own drug list and cost tiers, so the same medication can cost different amounts under different plans.</li>
+          <li><strong>What you'd pay.</strong> Monthly premium, deductible, copays, and the yearly out-of-pocket maximum.</li>
+          <li><strong>Extra benefits.</strong> Dental, vision, hearing, and other extras vary by plan and by county.</li>
+        </ul>
+
+        <h2 class="art-h2">When you can make a change</h2>
+
+        <p>
+          You can't switch plans at any time. Most changes happen during set enrollment periods, so it helps
+          to know which one applies to you.
+        </p>
+
+        <div class="date-table" role="table" aria-label="Medicare enrollment periods">
+          <div class="date-row" role="row">
+            <div class="date-when" role="cell">Oct 15 &ndash; Dec 7</div>
+            <div class="date-what" role="cell"><strong>Annual Enrollment Period.</strong> Join, switch, or drop a Medicare Advantage or drug plan. Changes start January 1.</div>
+          </div>
+          <div class="date-row" role="row">
+            <div class="date-when" role="cell">Jan 1 &ndash; Mar 31</div>
+            <div class="date-what" role="cell"><strong>Medicare Advantage Open Enrollment.</strong> For people already in a Medicare Advantage plan who want to switch to another plan or return to Original Medicare.</div>
+          </div>
+          <div class="date-row" role="row">
+            <div class="date-when" role="cell">Around your 65th birthday</div>
+            <div class="date-what" role="cell"><strong>Initial Enrollment Period.</strong> A seven-month window that starts three months before the month you turn 65.</div>
+          </div>
+        </div>
+
+        <p>
+          Some people also qualify for a Special Enrollment Period, for example after a move or a change in
+          other coverage. A licensed agent can tell you which window applies to you.
+        </p>
+
+        <div class="art-callout">
+          <div class="callout-icon">&#9888;&#65039;</div>
+          <p>
+            <strong>We do not offer every plan available in your area.</strong> Currently we represent
+            [NUMBER OF ORGANIZATIONS] organizations which offer [NUMBER OF PRODUCTS] products in your area.
+            Please contact Medicare.gov, 1-800-MEDICARE (TTY 1-877-486-2048), or your local State Health
+            Insurance Assistance Program (SHIP) to get information on all of your options.
+          </p>
+        </div>
+
+      </div>
+
+    </article>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 2 — CURRENT COVERAGE
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen" id="screen-q2">
+    <div class="main-container" style="padding-top:26px;">
+      <div class="card">
+        <div class="card-body">
+          <div class="q-step-label">Step 2 of 3 &middot; Your coverage</div>
+          <div class="q-title">How do you get your health coverage today?</div>
+          <div class="q-sub">There's no wrong answer. It just helps the agent understand what you'd be comparing against.</div>
+
+          <div class="answer-grid">
+            <button class="answer-btn" onclick="answerQ2('original_medicare')">
+              <div class="ans-icon">&#127973;</div>
+              <div>
+                <div class="ans-label">Original Medicare</div>
+                <div class="ans-hint">Parts A &amp; B, with or without a supplement</div>
+              </div>
+              <span class="ans-arrow">&rsaquo;</span>
+            </button>
+            <button class="answer-btn" onclick="answerQ2('medicare_advantage')">
+              <div class="ans-icon">&#128203;</div>
+              <div>
+                <div class="ans-label">A Medicare Advantage plan</div>
+                <div class="ans-hint">I want to see whether a different plan fits better</div>
+              </div>
+              <span class="ans-arrow">&rsaquo;</span>
+            </button>
+            <button class="answer-btn" onclick="answerQ2('employer_retiree')">
+              <div class="ans-icon">&#128188;</div>
+              <div>
+                <div class="ans-label">An employer or retiree plan</div>
+                <div class="ans-hint">Through my job or a former employer</div>
+              </div>
+              <span class="ans-arrow">&rsaquo;</span>
+            </button>
+            <button class="answer-btn" onclick="answerQ2('not_sure')">
+              <div class="ans-icon">&#10067;</div>
+              <div>
+                <div class="ans-label">I'm not sure</div>
+                <div class="ans-hint">The agent can help sort it out</div>
+              </div>
+              <span class="ans-arrow">&rsaquo;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCREEN 3 — WHAT MATTERS MOST
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen" id="screen-q3">
+    <div class="main-container" style="padding-top:26px;">
+      <div class="card">
+        <div class="card-body">
+          <div class="q-step-label">Step 3 of 3 &middot; Final question</div>
+          <div class="q-title">What matters most to you in a plan?</div>
+          <div class="q-sub">Pick the one that matters most. The agent will start there.</div>
+
+          <div class="answer-grid">
+            <button class="answer-btn" onclick="answerQ3('doctors')">
+              <div class="ans-icon">&#128105;&#8205;&#9877;&#65039;</div>
+              <div>
+                <div class="ans-label">Keeping my doctors</div>
+                <div class="ans-hint">Making sure my providers are in the network</div>
+              </div>
+              <span class="ans-arrow">&rsaquo;</span>
+            </button>
+            <button class="answer-btn" onclick="answerQ3('drugs')">
+              <div class="ans-icon">&#128138;</div>
+              <div>
+                <div class="ans-label">Prescription drug costs</div>
+                <div class="ans-hint">What my medications would cost</div>
+              </div>
+              <span class="ans-arrow">&rsaquo;</span>
+            </button>
+            <button class="answer-btn" onclick="answerQ3('extras')">
+              <div class="ans-icon">&#128083;</div>
+              <div>
+                <div class="ans-label">Dental, vision &amp; hearing</div>
+                <div class="ans-hint">Extra benefits beyond Original Medicare</div>
+              </div>
+              <span class="ans-arrow">&rsaquo;</span>
+            </button>
+            <button class="answer-btn" onclick="answerQ3('cost')">
+              <div class="ans-icon">&#128181;</div>
+              <div>
+                <div class="ans-label">Lower monthly costs</div>
+                <div class="ans-hint">Premiums, copays, and out-of-pocket limits</div>
+              </div>
+              <span class="ans-arrow">&rsaquo;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       TRANSITION
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen" id="screen-loading">
+    <div class="main-container" style="padding-top:26px;">
+      <div class="card">
+        <div class="card-body">
+          <div class="loading-wrap">
+            <div class="loading-spinner"></div>
+            <div class="loading-text" id="loadingText">One moment...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RESULT — Tap to Call + callback form
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="screen" id="screen-approved">
+    <div class="main-container" style="padding-top:26px;">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="approved-hero">
+            <div class="approved-check">
+              <svg viewBox="0 0 24 24">
+                <polyline points="20,6 9,17 4,12" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg>
+            </div>
+            <div class="approved-title">A Licensed Agent Can Check Plans in Your Area</div>
+            <div class="approved-sub" id="approvedSubText">Medicare Advantage plans, premiums, and benefits vary
+              by ZIP code and change every year. An agent will walk through the plans we offer where you live
+              and answer your questions. Most calls take 10&ndash;15 minutes.</div>
+          </div>
+
+          <a href="#" id="ctaTop" class="cta-btn phone-link" data-phone-prefix="&#128222; TAP TO CALL: " hidden onclick="trackEvent('offer_click')">&nbsp;</a>
+          <div class="cta-sub-note">No obligation &middot; Free</div>
+          <div class="tap-fallback-note">If nothing happens when you tap: open this page in your phone's
+            browser (tap the <strong>&bull;&bull;&bull;</strong> or <strong>&#8942;</strong> menu at the top, choose
+            "Open in Browser"), then tap the number again.</div>
+
+          <!-- ──────────────────────────────────────────────────────────
+               SECONDARY PATH: callback form → LeadConduit.
+               TrustedForm injects its hidden xxTrustedFormCertUrl input
+               into this <form> on page load.
+          ─────────────────────────────────────────────────────────────── -->
+          <div class="softlead-box" id="softleadBox">
+            <div class="softlead-head">
+              <div class="softlead-kicker">Not ready to call right now?</div>
+              <div class="softlead-title">Skip The Call, Have An Advisor Reach Out To You</div>
+              <div class="softlead-sub">No pressure, no obligation. A licensed agent can call or text you
+                at a time that works better for you. Just tell us how to reach you.</div>
+            </div>
+
+            <form id="softleadForm" name="callback-request-medicare-advantage" method="POST">
+              <!-- Honeypot: real visitors never see or fill this -->
+              <p class="visually-hidden"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+              <!-- ── HIDDEN LEADCONDUIT FIELDS ─────────────────────────────
+                   Names match the LeadConduit flow's HTTP parameters.
+                   data-from = URL parameter(s) to fill from, first match
+                   wins; values are captured on landing and kept for the
+                   session, and a value that is already filled is never
+                   overwritten. Fields without data-from are set on submit.
+              ─────────────────────────────────────────────────────────── -->
+              <div id="lcHidden" hidden>
+                <!-- Set on submit -->
+                <input type="hidden" name="trustedform_cert_url">
+                <input type="hidden" name="zipcode_sha">
+                <input type="hidden" name="opt_in">
+                <input type="hidden" name="landing_page">
+                <input type="hidden" name="source_sha" value="senior_healthcare_advisors_web">
+                <input type="hidden" name="source_timestamp">
+                <input type="hidden" name="device_category">
+                <input type="hidden" name="device_sha">
+                <input type="hidden" name="country" value="US">
+                <input type="hidden" name="platform_ghl_sha">
+
+                <!-- Meta — from the tracking URL -->
+                <input type="hidden" name="facebook.ad_id"        data-only="facebook" data-from="ad_id,adid">
+                <input type="hidden" name="facebook.adset_id"     data-only="facebook" data-from="adset_id,adgroup_id">
+                <input type="hidden" name="facebook.campaign_id"  data-only="facebook" data-from="campaign_id">
+                <input type="hidden" name="facebook.ad_name"      data-only="facebook" data-from="ad_name">
+                <input type="hidden" name="facebook.adset_name"   data-only="facebook" data-from="adset_name">
+                <input type="hidden" name="facebook.campaign_name" data-only="facebook" data-from="campaign_name">
+                <input type="hidden" name="facebook.platform"     data-only="facebook" data-from="site_source_name">
+
+                <!-- GHL / generic attribution slots. adgroup_id is the Google/Bing
+                     tracking-template name for what Meta calls adset_id. -->
+                <input type="hidden" name="sub_id_sha"            data-from="ad_id,adid,sub_id,sub1">
+                <input type="hidden" name="ad_id_ghl_sha"         data-from="ad_id,adid">
+                <input type="hidden" name="ad_group_id_ghl_sha"   data-from="adset_id,adgroup_id">
+                <input type="hidden" name="campaign_id_ghl_sha"   data-from="campaign_id">
+                <input type="hidden" name="medium_ghl_sha"        data-from="utm_medium,medium">
+                <input type="hidden" name="term_ghl_sha"          data-from="utm_term,term">
+
+                <!-- Click IDs (auto-appended by each ad platform) -->
+                <input type="hidden" name="meta_click_id_ghl_sha"      data-from="fbclid">
+                <input type="hidden" name="gclid_sha"                  data-from="gclid">
+                <input type="hidden" name="google_click_id_ghl_sha"    data-from="gclid">
+                <input type="hidden" name="google.clid"                data-from="gclid">
+                <input type="hidden" name="microsoft_click_id_ghl_sha" data-from="msclkid">
+              </div>
+
+              <div class="softlead-row">
+                <div class="softlead-field">
+                  <label for="sl-first">First Name</label>
+                  <input type="text" id="sl-first" name="first_name" autocomplete="given-name" required>
+                </div>
+                <div class="softlead-field">
+                  <label for="sl-last">Last Name</label>
+                  <input type="text" id="sl-last" name="last_name" autocomplete="family-name" required>
+                </div>
+              </div>
+
+              <div class="softlead-row">
+                <div class="softlead-field">
+                  <label for="sl-zip">ZIP Code</label>
+                  <input type="tel" id="sl-zip" name="postal_code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required>
+                </div>
+                <div class="softlead-field">
+                  <label for="sl-phone">Phone Number</label>
+                  <input type="tel" id="sl-phone" name="phone_1" inputmode="tel" autocomplete="tel" required>
+                </div>
+              </div>
+
+              <div class="softlead-field softlead-field-full">
+                <label for="sl-email">Email Address</label>
+                <input type="email" id="sl-email" name="email" autocomplete="email" required>
+              </div>
+
+              <!-- Tagged consent (use_tagged_consent=true) -->
+              <label class="softlead-consent">
+                <input type="checkbox" id="sl-consent" name="consent" required data-tf-element-role="consent-opt-in">
+                <span data-tf-element-role="consent-language">By submitting, I agree that Senior Healthcare Advisors and its licensed
+                  insurance agents may contact me by phone, text, or email, including by automated systems
+                  or prerecorded messages, about Medicare Advantage and other Medicare plan options.
+                  Consent is not a condition of purchase. Message and data rates may apply.</span>
+              </label>
+
+              <button type="submit" class="softlead-submit" data-tf-element-role="submit">Get My Free Callback &rarr;</button>
+              <div class="softlead-error" id="softleadError" role="alert" hidden>We couldn't send your request.
+                Please tap the call button above instead, or try again in a moment.</div>
+              <div class="softlead-note">&#128274; Your information is only shared with a licensed agent. It's never sold.</div>
+            </form>
+
+            <div class="softlead-thanks" id="softleadThanks" style="display:none;">
+              <div class="softlead-thanks-icon">&#10003;</div>
+              <div class="softlead-thanks-title">Got it, thank you!</div>
+              <div class="softlead-thanks-sub">A licensed agent will reach out shortly. If you'd rather not
+                wait, the call button above connects you right now.</div>
+            </div>
+          </div>
+
+          <div class="next-title">What Happens Next</div>
+
+          <div class="step-row">
+            <div class="step-circle">1</div>
+            <div>
+              <span class="step-strong">Speak with a licensed agent</span>
+              <span class="step-desc">They'll confirm your ZIP code and ask about your doctors and medications.</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-circle">2</div>
+            <div>
+              <span class="step-strong">Compare plans we offer in your area</span>
+              <span class="step-desc">Costs, networks, drug coverage, and extra benefits, side by side.</span>
+            </div>
+          </div>
+          <div class="step-row" style="margin-bottom:20px;">
+            <div class="step-circle">3</div>
+            <div>
+              <span class="step-strong">Decide with no pressure</span>
+              <span class="step-desc">No obligation to enroll. Enrollment is only possible during a valid enrollment period.</span>
+            </div>
+          </div>
+
+          <a href="#" id="ctaBottom" class="cta-btn phone-link" data-phone-prefix="&#128222; TAP TO CALL: " hidden onclick="trackEvent('offer_click')">&nbsp;</a>
+
+          <div class="fine">
+            We do not offer every plan available in your area. Currently we represent [NUMBER OF
+            ORGANIZATIONS] organizations which offer [NUMBER OF PRODUCTS] products in your area. Please
+            contact Medicare.gov, 1-800-MEDICARE (TTY 1-877-486-2048), or your local State Health
+            Insurance Assistance Program (SHIP) to get information on all of your options. Not connected
+            with or endorsed by the U.S. government or the federal Medicare program.
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="site-footer">
+    <div class="footer-links">
+      <!-- Placeholder hrefs — point these at the real pages before launch -->
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Do Not Sell My Info</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Senior Healthcare Advisors, LLC &middot; 828 S. Military Trail, Deerfield Beach, Florida 33442
+      &middot; A licensed insurance agency and non-government entity. This is an advertisement.
+      <br><br>
+      Medicare Advantage plans are offered by private companies that contract with Medicare. We do not
+      offer every plan available in your area. Currently we represent [NUMBER OF ORGANIZATIONS]
+      organizations which offer [NUMBER OF PRODUCTS] products in your area. Please contact Medicare.gov,
+      1-800-MEDICARE (TTY 1-877-486-2048), or your local State Health Insurance Assistance Program (SHIP)
+      to get information on all of your options. Plan availability varies by carrier and location.
+      [STATE LICENSE NUMBERS / NPN AS REQUIRED]
+    </div>
+  </div>
+
+  <!-- Sticky mobile call bar -->
+  <a href="#" class="sticky-call-bar phone-link" data-phone-prefix="&#128222; TAP TO CALL: " hidden onclick="trackEvent('sticky_bar_click')">&nbsp;</a>
+
+
+  <script>
+    /* ══════════════════════════════════════════════════════════════════
+       URL PARAMETER CAPTURE — runs first.
+       Every query parameter on the landing URL (ad_id, adset_id,
+       campaign_id, source, fbclid, gclid, msclkid, utm_*, …) is saved to
+       sessionStorage so it survives the quiz. Values in the current URL
+       win over stored ones. getParam(k) reads URL first, then the stored copy.
+    ══════════════════════════════════════════════════════════════════ */
+    var LP_PARAMS_KEY = 'sha_ma_lp_params';
+
+    var landingParams = (function () {
+      var stored = {};
+      try { stored = JSON.parse(sessionStorage.getItem(LP_PARAMS_KEY) || '{}') || {}; } catch (e) {}
+      new URLSearchParams(window.location.search).forEach(function (v, k) {
+        if (v !== '' && !/^\{\{.*\}\}$/.test(v) && !/^\{[^}]*\}$/.test(v)) stored[k] = v; // skip unreplaced {macros}
+      });
+      try { sessionStorage.setItem(LP_PARAMS_KEY, JSON.stringify(stored)); } catch (e) {}
+      return stored;
+    })();
+
+    function getParam(k) {
+      var fromUrl = new URLSearchParams(window.location.search).get(k);
+      if (fromUrl && !/^\{\{.*\}\}$/.test(fromUrl) && !/^\{[^}]*\}$/.test(fromUrl)) return fromUrl;
+      return landingParams[k] || '';
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       ███  EDIT HERE  ███  CALL TRACKING — CallGrid (lazy-loaded on intent)
+       ──────────────────────────────────────────────────────────────────
+       • CALLGRID_CAMPAIGN_SOURCE_ID and CALLGRID_FALLBACK are placeholders:
+         set them to the Medicare Advantage campaign's values before launch.
+       • loadCallGrid() runs on the visitor's first real interaction or first
+         quiz answer, so bots that never interact don't burn tracking numbers.
+       • After CALLGRID_FALLBACK_MS every .phone-link shows the static number
+         if CallGrid hasn't assigned one yet.
+    ══════════════════════════════════════════════════════════════════ */
+    var CALLGRID_ORGANIZATION_ID    = 'cmtvmotph009n08idkzd6j0lr';
+    var CALLGRID_CAMPAIGN_SOURCE_ID = '';   // ← Medicare Advantage campaign source ID
+    var CALLGRID_FALLBACK    = '';          // ← static fallback number, e.g. '+18005551234'
+    var CALLGRID_FALLBACK_MS = 2000;
+
+    function loadCallGrid() {
+      if (!CALLGRID_CAMPAIGN_SOURCE_ID) return;
+      if (document.querySelector('script[src*="callgrid.com"]')) return;
+      var script = document.createElement('script');
+      script.src = 'https://cdn.callgrid.com/callgrid.js';
+      script.dataset.organizationId = CALLGRID_ORGANIZATION_ID;
+      script.dataset.campaignSourceId = CALLGRID_CAMPAIGN_SOURCE_ID;
+      script.async = true;
+      document.head.appendChild(script);
+    }
+
+    function formatPhone(raw) {
+      var d = String(raw || '').replace(/\D/g, '');
+      if (d.length === 11 && d.charAt(0) === '1') d = d.slice(1);
+      if (d.length !== 10) return String(raw || '');
+      return '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+    }
+
+    function telHref(raw) {
+      var d = String(raw || '').replace(/\D/g, '');
+      if (d.length === 10) d = '1' + d;
+      return 'tel:+' + d;
+    }
+
+    var phoneShown = false;
+
+    function setPhoneLinks(number) {
+      var links = document.querySelectorAll('.phone-link');
+      // No number configured yet: show a visibly-unset placeholder that can't be dialed.
+      var pretty = number ? formatPhone(number) : '(XXX) XXX-XXXX';
+      var href   = number ? telHref(number) : '#';
+      for (var i = 0; i < links.length; i++) {
+        var el = links[i];
+        el.href = href;
+        el.textContent = (el.getAttribute('data-phone-prefix') || '') + pretty;
+        el.removeAttribute('hidden');
+      }
+      phoneShown = true;
+      if (!number && window.console) console.warn('No phone number configured: set CALLGRID_FALLBACK / CALLGRID_CAMPAIGN_SOURCE_ID.');
+    }
+
+    function initCallGrid() {
+      document.addEventListener('callgrid:numberAssigned', function (event) {
+        var n = event && event.detail && event.detail.phoneNumber;
+        if (!n) return;
+        setPhoneLinks(n);
+      });
+
+      setTimeout(function () {
+        if (!phoneShown) setPhoneLinks(CALLGRID_FALLBACK);
+      }, CALLGRID_FALLBACK_MS);
+
+      var intentEvents = ['scroll', 'pointerdown', 'touchstart', 'keydown', 'mousemove'];
+      function onIntent() {
+        intentEvents.forEach(function (ev) { window.removeEventListener(ev, onIntent, true); });
+        loadCallGrid();
+      }
+      intentEvents.forEach(function (ev) {
+        window.addEventListener(ev, onIntent, { capture: true, passive: true });
+      });
+    }
+
+    initCallGrid();
+
+    /* ══════════════════════════════════════════════════════════════════
+       ATTRIBUTION / ANALYTICS — no beacon fires until AG_TRACKER is set.
+    ══════════════════════════════════════════════════════════════════ */
+    var AG_TRACKER = ''; // ← set to your own tracker URL before launch
+    var AG_LANDER  = 'senior_healthcare_advisors_medicare_advantage_v1';
+    var userZip    = '';
+    var answers    = { situation: '', coverage: '', priority: '' };
+
+    function trackEvent(event) {
+      try {
+        if (!AG_TRACKER) return;
+        var p = new URLSearchParams(window.location.search);
+        var adId    = getParam('ad_id') || getParam('adid') || getParam('sub_id') || getParam('sub1');
+        var clickId = getParam('clickid') || getParam('click_id') || getParam('fbclid');
+        var qs = [
+          'event='       + encodeURIComponent(event),
+          'lander='      + AG_LANDER,
+          'zip='         + encodeURIComponent(userZip || ''),
+          'sub1='        + encodeURIComponent(adId),
+          'sub2='        + encodeURIComponent(p.get('sub2') || ''),
+          'clickid='     + encodeURIComponent(clickId),
+          'utm_source='  + encodeURIComponent(p.get('utm_source') || ''),
+          'utm_campaign='+ encodeURIComponent(p.get('utm_campaign') || '')
+        ].join('&');
+        new Image().src = AG_TRACKER + '/api/lander-track?' + qs;
+      } catch (e) {}
+    }
+
+    trackEvent('page_view');
+
+    /* DATELINE — current month/year */
+    (function () {
+      var el = document.getElementById('artDateline');
+      if (!el) return;
+      try {
+        el.textContent = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+      } catch (e) {}
+    })();
+
+    /* ══════════════════════════════════════════════════════════════════
+       QUIZ FLOW
+    ══════════════════════════════════════════════════════════════════ */
+    function setProgress(pct) {
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('progressBubble').innerText = pct + '%';
+    }
+
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(function (s) { s.classList.remove('active'); });
+      document.getElementById(id).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    function answerQ1(val) {
+      loadCallGrid();
+      answers.situation = val;
+      trackEvent('q1_situation_' + val);
+      setProgress(50);
+      showScreen('screen-q2');
+    }
+
+    function answerQ2(val) {
+      answers.coverage = val;
+      trackEvent('q2_coverage_' + val);
+      setProgress(75);
+      showScreen('screen-q3');
+    }
+
+    function answerQ3(val) {
+      answers.priority = val;
+      trackEvent('q3_priority_' + val);
+      setProgress(95);
+      runTransition();
+    }
+
+    var PRIORITY_PHRASE = {
+      doctors: 'keeping your doctors',
+      drugs: 'prescription drug costs',
+      extras: 'dental, vision, and hearing benefits',
+      cost: 'lower monthly costs'
+    };
+
+    var LOADING_MESSAGES = ['Reviewing your answers...', 'Almost done...'];
+    var LOADING_STEP_MS = 800;
+
+    function runTransition() {
+      trackEvent('transition_view');
+      showScreen('screen-loading');
+      var loadingTextEl = document.getElementById('loadingText');
+      var step = 0;
+      loadingTextEl.innerText = LOADING_MESSAGES[0];
+      var timer = setInterval(function () {
+        step++;
+        if (step < LOADING_MESSAGES.length) {
+          loadingTextEl.innerText = LOADING_MESSAGES[step];
+        } else {
+          clearInterval(timer);
+          setProgress(100);
+          trackEvent('result_view');
+          var phrase = PRIORITY_PHRASE[answers.priority];
+          var sub = document.getElementById('approvedSubText');
+          if (phrase && sub) {
+            sub.textContent = 'You told us your top priority is ' + phrase + ', so the agent can start there. ' +
+              'Medicare Advantage plans, premiums, and benefits vary by ZIP code and change every year. ' +
+              'Most calls take 10–15 minutes.';
+          }
+          showScreen('screen-approved');
+        }
+      }, LOADING_STEP_MS);
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       SOFT-LEAD FORM → LEADCONDUIT
+       ──────────────────────────────────────────────────────────────────
+       On page load: hidden fields with data-from are filled from the
+       landing-URL parameters (never overwriting a value already there).
+       On submit:
+         1. Validate (required fields, 5-digit ZIP, 10-digit phone).
+         2. Wait for the TrustedForm cert (up to ~3s).
+         3. Fill the submit-time hidden fields.
+         4. POST every named field (visible + hidden) to LEADCONDUIT_URL,
+            minus honeypot / checkbox / TrustedForm's own xx* inputs and
+            empty values.
+       mode:'no-cors' → the browser can't read LeadConduit's reply; check
+       the flow's Events log to confirm acceptance.
+    ══════════════════════════════════════════════════════════════════ */
+    var LEADCONDUIT_URL = ''; // ← Medicare Advantage flow source URL (…/flows/<id>/sources/<id>/submit)
+
+    var LC_EXCLUDE = { 'bot-field': 1, 'consent': 1, 'xxTrustedFormCertUrl': 1, 'xxTrustedFormPingUrl': 1, 'xxTrustedFormToken': 1 };
+
+    function setHidden(form, name, value) {
+      var el = form.querySelector('input[name="' + name + '"]');
+      if (el) el.value = value == null ? '' : String(value);
+    }
+
+    function detectPlatform() {
+      var utm = (getParam('utm_source') || getParam('source') || '').toLowerCase();
+      if (/^(google|bing)$/.test(utm)) return utm;
+      if (/^(meta|facebook|instagram)$/.test(utm)) return 'facebook'; // same label the home healthcare funnel sends for Meta traffic
+      var src = (getParam('site_source_name') || '').toLowerCase();
+      if (getParam('fbclid') || /^(fb|ig|an|msg|facebook|instagram)$/.test(src) || getParam('ad_id') && !getParam('gclid') && !getParam('msclkid')) return 'facebook';
+      if (getParam('gclid')) return 'google';
+      if (getParam('msclkid')) return 'bing';
+      return utm;
+    }
+
+    function detectDevice() {
+      var ua = navigator.userAgent || '';
+      if (/iPad|Tablet|PlayBook|Silk|(Android(?!.*Mobile))/i.test(ua)) return 'tablet';
+      if (/Mobi|iPhone|iPod|Android/i.test(ua)) return 'phone';
+      return 'web';
+    }
+
+    (function () {
+      var form = document.getElementById('softleadForm');
+      if (!form) return;
+      var errorEl = document.getElementById('softleadError');
+
+      // facebook.* fields are only filled for Meta traffic, so Google / Bing
+      // clicks don't get their IDs mislabelled as Facebook data in LeadConduit.
+      var platform = detectPlatform();
+      var hiddenInputs = form.querySelectorAll('input[type="hidden"][data-from]');
+      for (var i = 0; i < hiddenInputs.length; i++) {
+        var el = hiddenInputs[i];
+        if (el.value) continue;
+        if (el.getAttribute('data-only') && el.getAttribute('data-only') !== platform) continue;
+        var keys = el.getAttribute('data-from').split(',');
+        for (var j = 0; j < keys.length; j++) {
+          var v = getParam(keys[j].trim());
+          if (v) { el.value = v; break; }
+        }
+      }
+      setHidden(form, 'platform_ghl_sha', platform);
+
+      function readCertField() {
+        var field = form.querySelector('input[name="xxTrustedFormCertUrl"]') ||
+                    document.querySelector('input[name="xxTrustedFormCertUrl"]');
+        return field && field.value ? field.value : '';
+      }
+
+      function getTrustedFormCertUrl(attemptsLeft) {
+        var v = readCertField();
+        if (v) return Promise.resolve(v);
+        if (attemptsLeft <= 0) return Promise.resolve('');
+        return new Promise(function (resolve) {
+          setTimeout(function () { resolve(getTrustedFormCertUrl(attemptsLeft - 1)); }, 300);
+        });
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errorEl.hidden = true;
+
+        var bot = form.querySelector('input[name="bot-field"]');
+        if (bot && bot.value) return;
+
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+
+        var ph = document.getElementById('sl-phone');
+        var phoneDigits = ph.value.replace(/\D/g, '');
+        if (phoneDigits.length === 11 && phoneDigits.charAt(0) === '1') phoneDigits = phoneDigits.slice(1);
+        if (phoneDigits.length !== 10) {
+          ph.setCustomValidity('Please enter a 10-digit phone number.');
+          ph.reportValidity();
+          ph.addEventListener('input', function clear() { ph.setCustomValidity(''); ph.removeEventListener('input', clear); });
+          return;
+        }
+
+        // Never pretend a lead was sent when no flow is configured.
+        if (!LEADCONDUIT_URL) {
+          if (window.console) console.error('LEADCONDUIT_URL is not set: nothing was sent.');
+          errorEl.hidden = false;
+          return;
+        }
+
+        var submitBtn = form.querySelector('.softlead-submit');
+        if (submitBtn) submitBtn.disabled = true;
+
+        var zipVal = document.getElementById('sl-zip').value.trim();
+        userZip = zipVal;
+
+        getTrustedFormCertUrl(10).then(function (certUrl) {
+          if (!certUrl && window.console) {
+            console.warn('TrustedForm cert URL missing: the flow\'s TrustedForm filter will reject this lead. Check trustedform.js isn\'t blocked (ad blocker / Brave Shields).');
+          }
+
+          var device = detectDevice();
+          setHidden(form, 'trustedform_cert_url', certUrl);
+          setHidden(form, 'zipcode_sha', zipVal);
+          setHidden(form, 'opt_in', document.getElementById('sl-consent').checked ? 'True' : 'False');
+          setHidden(form, 'landing_page', window.location.href);
+          setHidden(form, 'source_timestamp', new Date().toISOString());
+          setHidden(form, 'device_category', device);
+          setHidden(form, 'device_sha', device);
+          if (!form.querySelector('input[name="platform_ghl_sha"]').value) {
+            setHidden(form, 'platform_ghl_sha', detectPlatform());
+          }
+
+          var body = new URLSearchParams();
+          new FormData(form).forEach(function (value, name) {
+            if (LC_EXCLUDE[name]) return;
+            if (name === 'phone_1') value = phoneDigits;
+            value = String(value).trim();
+            if (value !== '') body.append(name, value);
+          });
+
+          return fetch(LEADCONDUIT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            keepalive: true,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body.toString()
+          }).then(function () { return true; }, function (err) {
+            if (window.console) console.error('LeadConduit POST failed:', err);
+            return false;
+          });
+        }).then(function (sent) {
+          if (sent) {
+            trackEvent('softlead_submit');
+            form.style.display = 'none';
+            document.getElementById('softleadThanks').style.display = 'block';
+          } else {
+            errorEl.hidden = false;
+            if (submitBtn) submitBtn.disabled = false;
+          }
+        });
+      });
+    })();
+
+    // ZIP: digits only as they type.
+    (function () {
+      var zip = document.getElementById('sl-zip');
+      if (zip) zip.addEventListener('input', function () {
+        this.value = this.value.replace(/\D/g, '');
+      });
+    })();
+  </script>
+
+</body>
+</html>
