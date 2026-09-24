@@ -963,7 +963,7 @@
 
       <div class="art-kicker">
         <span class="art-tag">Medicare Advantage</span>
-        <span class="art-dateline" id="artDateline">Updated this month</span>
+        <span class="art-dateline" style="color:var(--ink);font-weight:900;">Advertisement</span>
       </div>
 
       <h1 class="art-headline">
@@ -1062,9 +1062,10 @@
             </div>
           </div>
 
-          <div class="fine">By continuing you agree to speak with a licensed insurance agent. This is an
-            advertisement for Medicare Advantage and other Medicare plans offered by private insurance
-            companies. Not connected with or endorsed by the U.S. government or the federal Medicare program.</div>
+          <div class="fine">Answering these questions doesn't enroll you in anything or sign you up to be
+            contacted. This is an advertisement for Medicare Advantage and other Medicare plans offered by
+            private insurance companies. Not connected with or endorsed by the U.S. government or the
+            federal Medicare program.</div>
 
         </div>
       </div>
@@ -1272,7 +1273,7 @@
             <div class="approved-title">A Licensed Agent Can Check Plans in Your Area</div>
             <div class="approved-sub" id="approvedSubText">Medicare Advantage plans, premiums, and benefits vary
               by ZIP code and change every year. An agent will walk through the plans we offer where you live
-              and answer your questions. Most calls take 10&ndash;15 minutes.</div>
+              and answer your questions.</div>
           </div>
 
           <a href="#" id="ctaTop" class="cta-btn phone-link" data-phone-prefix="&#128222; TAP TO CALL: " hidden onclick="trackEvent('offer_click')">&nbsp;</a>
@@ -1383,7 +1384,7 @@
               <button type="submit" class="softlead-submit" data-tf-element-role="submit">Get My Free Callback &rarr;</button>
               <div class="softlead-error" id="softleadError" role="alert" hidden>We couldn't send your request.
                 Please tap the call button above instead, or try again in a moment.</div>
-              <div class="softlead-note">&#128274; Your information is only shared with a licensed agent. It's never sold.</div>
+              <div class="softlead-note">Your information is used to contact you about Medicare plan options, as described in our <a href="https://www.seniorhealthcareadv.com/privacy-policy/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Privacy Policy</a>.</div>
             </form>
 
             <div class="softlead-thanks" id="softleadThanks" style="display:none;">
@@ -1436,11 +1437,8 @@
   <!-- FOOTER -->
   <div class="site-footer">
     <div class="footer-links">
-      <!-- Placeholder hrefs — point these at the real pages before launch -->
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Do Not Sell My Info</a>
-      <a href="#">Contact</a>
+      <a href="https://www.seniorhealthcareadv.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+      <a href="https://www.seniorhealthcareadv.com/contact/" target="_blank" rel="noopener">Contact</a>
     </div>
     <div class="footer-copy">
       &copy; 2026 Senior Healthcare Advisors, LLC &middot; 828 S. Military Trail, Deerfield Beach, Florida 33442
@@ -1594,15 +1592,6 @@
 
     trackEvent('page_view');
 
-    /* DATELINE — current month/year */
-    (function () {
-      var el = document.getElementById('artDateline');
-      if (!el) return;
-      try {
-        el.textContent = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-      } catch (e) {}
-    })();
-
     /* ══════════════════════════════════════════════════════════════════
        QUIZ FLOW
     ══════════════════════════════════════════════════════════════════ */
@@ -1667,8 +1656,7 @@
           var sub = document.getElementById('approvedSubText');
           if (phrase && sub) {
             sub.textContent = 'You told us your top priority is ' + phrase + ', so the agent can start there. ' +
-              'Medicare Advantage plans, premiums, and benefits vary by ZIP code and change every year. ' +
-              'Most calls take 10–15 minutes.';
+              'Medicare Advantage plans, premiums, and benefits vary by ZIP code and change every year.';
           }
           showScreen('screen-approved');
         }

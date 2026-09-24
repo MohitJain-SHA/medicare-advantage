@@ -12,14 +12,25 @@ Everything below is a marked placeholder in `index.html`. Nothing on the page pr
 | LeadConduit flow | `LEADCONDUIT_URL` in the script (`…/flows/<id>/sources/<id>/submit`) | Submitting the callback form shows an error instead of a success message |
 | TPMO disclaimer counts | `[NUMBER OF ORGANIZATIONS]` / `[NUMBER OF PRODUCTS]` (three places: article callout, result screen, footer) | Placeholder text is visible on the page |
 | License numbers / NPN | `[STATE LICENSE NUMBERS / NPN AS REQUIRED]` in the footer | Placeholder text is visible on the page |
-| Footer links | Privacy, Terms, Do Not Sell, Contact (`href="#"`) | Links go nowhere |
+| Terms of Service / Do Not Sell My Info | Not linked: no such pages exist on seniorhealthcareadv.com yet | Add footer links once the pages exist (state privacy laws may require a Do Not Sell/Share page) |
 | Preview image | `og:image` / `og:url` in `<head>` | No link-preview image |
 
 Also confirm with LeadConduit: `source_sha` is still `senior_healthcare_advisors_web` (copied from the home healthcare funnel) — change it if this flow routes on a different value.
 
 ## Compliance notes
 
-Medicare marketing is regulated by CMS. Have compliance review the copy, the consent language, and the disclaimer before running traffic. This page intentionally leaves out the home healthcare funnel's simulated visitor counter, rotating "recent activity" popups, and countdown timer.
+This is a good-faith review, not legal advice or a compliance sign-off. Medicare marketing is regulated by CMS (and consent by the TCPA), so have your compliance team or carrier marketing departments review the page before running traffic.
+
+What the page does:
+
+- Labels the page **Advertisement** at the top, since the article format could read as editorial.
+- Shows the TPMO disclaimer in three places (article, result screen, footer) plus a "not connected with or endorsed by the U.S. government or the federal Medicare program" statement. **The organization and product counts are still placeholders.**
+- Names Senior Healthcare Advisors in the consent language, leaves the checkbox unchecked, and states that consent isn't a condition of purchase. Answering the quiz is explicitly *not* treated as consent.
+- Links the Privacy Policy on seniorhealthcareadv.com next to the form and in the footer.
+- Leaves out the home healthcare funnel's simulated visitor counter, rotating fake "approved" popups, countdown timer, and "never sold" claim.
+- Enrollment dates (Oct 15 – Dec 7, Jan 1 – Mar 31, initial enrollment window) are stated factually.
+
+Not handled by this page: the CMS call requirements (recording, the verbal TPMO disclaimer at the start of a call, and a documented Scope of Appointment 48 hours before a personal marketing appointment) belong in the call scripts.
 
 ## Attribution
 
