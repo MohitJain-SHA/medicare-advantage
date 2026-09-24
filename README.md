@@ -8,7 +8,7 @@ Everything below is a marked placeholder in `index.html`. Nothing on the page pr
 
 | What | Where | Behavior until set |
 | --- | --- | --- |
-| Phone number | `CALLGRID_FALLBACK` (static number) and `CALLGRID_CAMPAIGN_SOURCE_ID` (tracking number) in the script | Call buttons show `(XXX) XXX-XXXX` and can't be dialed |
+| CallGrid tracking number | `CALLGRID_CAMPAIGN_SOURCE_ID` in the script | Visitors see the static number `(954) 697-9692` (`CALLGRID_FALLBACK`) instead of a per-visitor tracking number, so calls aren't attributed by CallGrid |
 | LeadConduit flow | `LEADCONDUIT_URL` in the script (`…/flows/<id>/sources/<id>/submit`) | Submitting the callback form shows an error instead of a success message |
 | TPMO disclaimer counts | `[NUMBER OF ORGANIZATIONS]` / `[NUMBER OF PRODUCTS]` (three places: article callout, result screen, footer) | Placeholder text is visible on the page |
 | License numbers / NPN | `[STATE LICENSE NUMBERS / NPN AS REQUIRED]` in the footer | Placeholder text is visible on the page |
